@@ -103,10 +103,7 @@ section p {
    Log Box
 ============================== */
 #log-box {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    width: 300px;
+    width: 100%;
     max-height: 200px;
     overflow-y: auto;
     background-color: rgba(0,0,0,0.7);
@@ -114,7 +111,7 @@ section p {
     padding: 10px;
     border-radius: 10px;
     font-size: 0.9em;
-    z-index: 1000;
+    margin-top: 20px; /* ด้านบน section */
 }
 
 /* Smooth Scroll */
