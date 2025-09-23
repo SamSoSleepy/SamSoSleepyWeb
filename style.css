@@ -1,0 +1,81 @@
+/* พื้นหลังธีม Deltarune */
+body {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  background-color: #0a001a;
+  color: #fff;
+  text-align: center;
+}
+
+/* หัวข้อ */
+header {
+  background: linear-gradient(to right, #000033, #330066);
+  padding: 20px;
+  border-bottom: 3px solid #6600cc;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #66ccff;
+  text-shadow: 2px 2px 5px #000;
+}
+
+/* เมนู */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+nav a {
+  color: #ff66ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ffff66;
+  text-shadow: 0 0 8px #fff;
+}
+
+/* ส่วนเนื้อหา */
+.intro {
+  margin: 40px auto;
+  max-width: 600px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #6600cc;
+  border-radius: 10px;
+}
+
+.intro h2 {
+  color: #66ccff;
+}
+
+/* ปุ่ม */
+button {
+  background: #6600cc;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #9900ff;
+  box-shadow: 0 0 15px #cc00ff;
+}
+
+/* ฟุตเตอร์ */
+footer {
+  margin-top: 50px;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #999;
+}
