@@ -1,113 +1,50 @@
-body {
-    font-family: 'Arial', sans-serif;
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
-    background: url('del.png') no-repeat center center fixed;
-    background-size: cover;
+/* รีเซ็ต */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#bg-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+/* วิดีโอพื้นหลังเต็มจอ */
+video#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
+/* กล่องเนื้อหา */
 .content {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+  padding-top: 20%;
 }
 
-header {
-    background-color: rgba(34, 34, 34, 0.85);
-    padding: 20px;
-    text-align: center;
+/* ข้อความ */
+h1 {
+  font-size: 3rem;
+  text-shadow: 0 0 10px black;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2em;
+/* ปุ่ม */
+#playMusicBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-.neon-text {
-    color: #0ff;
-    text-shadow:
-        0 0 5px #0ff,
-        0 0 10px #0ff,
-        0 0 20px #0ff,
-        0 0 40px #0ff,
-        0 0 80px #0ff;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
-}
-
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1em;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #0ff;
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-section {
-    padding: 60px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    text-align: center;
-}
-
-section h2 {
-    color: #ff00ff;
-    font-size: 1.8em;
-    margin-bottom: 20px;
-}
-
-section p {
-    font-size: 1.1em;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Log Box */
-#log-box {
-    width: 100%;
-    max-height: 200px;
-    overflow-y: auto;
-    background-color: rgba(0,0,0,0.7);
-    color: #ff5555;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 0.9em;
-    margin-top: 20px;
-}
-
-/* Hidden class */
-.hidden {
-    display: none;
-}
-
-/* Smooth scroll */
-html {
-    scroll-behavior: smooth;
-}
-
-#bg-music {
-    display: none;
+#playMusicBtn:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
