@@ -1,17 +1,45 @@
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* ป้องกันการเลื่อนหน้าจอที่ไม่จำเป็น */
+    font-family: Arial, sans-serif;
+}
+
+#videoBackground,
+#imageBackground {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+#imageBackground {
+    display: none; /* ซ่อนรูปภาพไว้ก่อน รอให้ JavaScript สั่งแสดง */
 }
 
 .content {
-  /* เพิ่มสไตล์สำหรับเนื้อหาของคุณที่อยู่ด้านบนวิดีโอ เช่นสี ฟอนต์ */
-  position: relative;
-  z-index: 1;
-  /* ตัวอย่าง */
-  color: white;
-  padding: 20px;
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding-top: 200px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* เพิ่มเงาข้อความให้อ่านง่ายขึ้น */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid white;
+    color: white;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
 }
