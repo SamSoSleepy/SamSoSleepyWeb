@@ -1,11 +1,31 @@
 /* ==============================
+   Video Background
+============================== */
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
+}
+
+/* ==============================
+   Content Styles
+============================== */
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+/* ==============================
    General Styles
 ============================== */
 body {
     font-family: 'Arial', sans-serif;
-    /* พื้นหลัง GIF */
-    background: url('del.gif') no-repeat center center fixed;
-    background-size: cover;
     color: #ffffff;
     margin: 0;
     padding: 0;
@@ -15,13 +35,13 @@ body {
    Header & Navigation
 ============================== */
 header {
-    background-color: rgba(34, 34, 34, 0.85); /* สีพื้นหลังแบบโปร่งแสง */
+    background-color: rgba(34, 34, 34, 0.85);
     padding: 20px;
     text-align: center;
 }
 
 header h1 {
-    color: #00ffff; /* สี cyan แบบ Deltarune */
+    color: #00ffff;
     margin: 0;
     font-size: 2em;
 }
@@ -60,7 +80,7 @@ section {
 }
 
 section h2 {
-    color: #ff00ff; /* สี magenta แบบ Deltarune */
+    color: #ff00ff;
     font-size: 1.8em;
     margin-bottom: 20px;
 }
