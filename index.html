@@ -15,12 +15,9 @@
 
     <!-- Background Music -->
     <audio autoplay loop id="bg-music">
-        <source src="delmusic.mp4" type="audio/mp3">
+        <source src="delmusic.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
-
-    <!-- Log Box -->
-    <div id="log-box"></div>
 
     <!-- Main Content -->
     <div class="content">
@@ -28,9 +25,9 @@
             <h1 class="neon-text">Welcome to SamSoSleepy Web</h1>
             <nav>
                 <ul>
-                    <li><a href="#home">BetMcUi</a></li>
-                    <li><a href="#characters">Free Addon</a></li>
-                    <li><a href="#gallery">Other</a></li>
+                    <li><a href="#home" onclick="hideLog()">BetMcUi</a></li>
+                    <li><a href="#characters" onclick="hideLog()">Free Addon</a></li>
+                    <li><a href="#gallery" onclick="showLog()">Other</a></li>
                 </ul>
             </nav>
         </header>
@@ -48,6 +45,9 @@
         <section id="gallery">
             <h2>Other Section</h2>
             <p>เนื้อหาสำหรับ Other/Gallery ของคุณ</p>
+
+            <!-- Log Box อยู่ใน Other -->
+            <div id="log-box" style="display:none;"></div>
         </section>
     </div>
 
