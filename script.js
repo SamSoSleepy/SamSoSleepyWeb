@@ -1,4 +1,10 @@
-document.getElementById("magic-btn").addEventListener("click", () => {
-  alert("✨ You feel the power of the Dark World!");
-  document.body.style.backgroundColor = "#000033"; // เปลี่ยนสีพื้นหลัง
+// ตัวอย่าง scroll smooth เมื่อคลิกเมนู
+const links = document.querySelectorAll('nav a');
+
+links.forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+    });
 });
