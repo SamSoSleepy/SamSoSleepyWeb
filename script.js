@@ -11,13 +11,20 @@ function showSection(sectionId) {
             }
         }
     });
-}
 
-// Log Box
-const logBox = document.getElementById('log-box');
+    // แสดง logBox ถ้าเป็น Other
+    if(sectionId === 'gallery') {
+        const logBox = document.getElementById('log-box');
+        if(logBox) logBox.style.display = 'block';
+    } else {
+        const logBox = document.getElementById('log-box');
+        if(logBox) logBox.style.display = 'none';
+    }
+}
 
 // Function เพิ่มข้อความ log
 function logError(message) {
+    const logBox = document.getElementById('log-box'); // เลือกใหม่ทุกครั้ง
     if (!logBox) return;
     const time = new Date().toLocaleTimeString();
     const newLog = document.createElement('div');
