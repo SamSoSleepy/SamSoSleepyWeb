@@ -1,39 +1,33 @@
 const bgMusic = document.getElementById("bg-music");
+const startBtn = document.getElementById("startBtn");
 const muteBtn = document.getElementById("muteBtn");
 
-// ฟังก์ชันเริ่มเล่นเพลงอัตโนมัติ
-function startMusic() {
-  bgMusic.volume = 1.0;
+// เมื่อโหลดเว็บพยายามเล่นอัตโนมัติ
+window.addEventListener("load", () => {
   const playPromise = bgMusic.play();
-
   if (playPromise !== undefined) {
     playPromise
       .then(() => {
-        console.log("Music autoplay success ✅");
+        console.log("Autoplay success ✅");
+        startBtn.style.display = "none";
+        muteBtn.style.display = "inline-block";
       })
       .catch(() => {
-        console.log("Autoplay blocked ❌, trying silent-unmute hack...");
-        // ถ้าโดนบล็อก → เล่นแบบเงียบก่อนแล้วค่อยเปิดเสียง
-        bgMusic.volume = 0;
-        bgMusic.play().then(() => {
-          setTimeout(() => {
-            bgMusic.volume = 1.0;
-          }, 1000);
-        });
+        console.log("Autoplay blocked ❌ ต้องกดปุ่มเริ่ม");
+        startBtn.style.display = "inline-block";
       });
   }
-}
+});
 
-// เริ่มเพลงเมื่อโหลดเว็บ
-window.addEventListener("load", startMusic);
+// ปุ่ม Start (ถ้า autoplay โดนบล็อก)
+startBtn.addEventListener("click", () => {
+  bgMusic.play();
+  startBtn.style.display = "none";
+  muteBtn.style.display = "inline-block";
+});
 
 // ปุ่ม Mute / Unmute
 muteBtn.addEventListener("click", () => {
-  if (bgMusic.muted) {
-    bgMusic.muted = false;
-    muteBtn.textContent = "🔊 Mute";
-  } else {
-    bgMusic.muted = true;
-    muteBtn.textContent = "🔈 Unmute";
-  }
+  bgMusic.muted = !bgMusic.muted;
+  muteBtn.textContent = bgMusic.muted ? "🔈 Unmute" : "🔊 Mute";
 });
