@@ -32,8 +32,8 @@ h1 {
   text-shadow: 0 0 10px black;
 }
 
-/* ปุ่ม */
-#playMusicBtn {
+/* ปุ่ม Mute */
+#muteBtn {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 1.2rem;
@@ -45,6 +45,6 @@ h1 {
   transition: background 0.3s;
 }
 
-#playMusicBtn:hover {
+#muteBtn:hover {
   background: rgba(255, 255, 255, 0.3);
 }
