@@ -1,14 +1,20 @@
+// Section Show/Hide
+function showSection(sectionId) {
+    const sections = ['home','characters','gallery'];
+    sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            if(id === sectionId) {
+                el.classList.remove('hidden');
+            } else {
+                el.classList.add('hidden');
+            }
+        }
+    });
+}
+
+// Log Box
 const logBox = document.getElementById('log-box');
-
-// แสดง log
-function showLog() {
-    if (logBox) logBox.style.display = 'block';
-}
-
-// ซ่อน log
-function hideLog() {
-    if (logBox) logBox.style.display = 'none';
-}
 
 // Function เพิ่มข้อความ log
 function logError(message) {
@@ -25,4 +31,4 @@ const bgVideo = document.getElementById('bg-video');
 bgVideo.addEventListener('error', () => logError("Video del.mp4 ไม่โหลด"));
 
 const bgMusic = document.getElementById('bg-music');
-bgMusic.addEventListener('error', () => logError("Audio delmusic.mp3 ไม่เล่น"));
+bgMusic.addEventListener('error', () => logError("Audio delmusic.mp4 ไม่เล่น"));
