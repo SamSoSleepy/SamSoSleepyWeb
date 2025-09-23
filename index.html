@@ -25,29 +25,30 @@
             <h1 class="neon-text">Welcome to SamSoSleepy Web</h1>
             <nav>
                 <ul>
-                    <li><a href="#home" onclick="hideLog()">BetMcUi</a></li>
-                    <li><a href="#characters" onclick="hideLog()">Free Addon</a></li>
-                    <li><a href="#gallery" onclick="showLog()">Other</a></li>
+                    <li><a href="#" onclick="showSection('home')">BetMcUi</a></li>
+                    <li><a href="#" onclick="showSection('characters')">Free Addon</a></li>
+                    <li><a href="#" onclick="showSection('gallery')">Other</a></li>
                 </ul>
             </nav>
         </header>
 
-        <section id="home">
+        <!-- Sections -->
+        <section id="home" class="hidden">
             <h2>BetMcUi Section</h2>
             <p>เนื้อหาสำหรับ BetMcUi ของคุณ</p>
         </section>
 
-        <section id="characters">
+        <section id="characters" class="hidden">
             <h2>Free Addon Section</h2>
             <p>เนื้อหาสำหรับ Free Addon ของคุณ</p>
         </section>
 
-        <section id="gallery">
+        <section id="gallery" class="hidden">
             <h2>Other Section</h2>
             <p>เนื้อหาสำหรับ Other/Gallery ของคุณ</p>
 
             <!-- Log Box อยู่ใน Other -->
-            <div id="log-box" style="display:none;"></div>
+            <div id="log-box"></div>
         </section>
     </div>
 
