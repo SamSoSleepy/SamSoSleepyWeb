@@ -1,11 +1,10 @@
-/* รีเซ็ต */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* วิดีโอพื้นหลังเต็มจอ */
+/* วิดีโอพื้นหลัง */
 video#bg-video {
   position: fixed;
   top: 0;
@@ -16,7 +15,7 @@ video#bg-video {
   z-index: -1;
 }
 
-/* กล่องเนื้อหา */
+/* เนื้อหา */
 .content {
   position: relative;
   z-index: 1;
@@ -26,14 +25,12 @@ video#bg-video {
   padding-top: 20%;
 }
 
-/* ข้อความ */
 h1 {
   font-size: 3rem;
   text-shadow: 0 0 10px black;
 }
 
-/* ปุ่ม Mute */
-#muteBtn {
+button {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 1.2rem;
@@ -45,6 +42,6 @@ h1 {
   transition: background 0.3s;
 }
 
-#muteBtn:hover {
+button:hover {
   background: rgba(255, 255, 255, 0.3);
 }
