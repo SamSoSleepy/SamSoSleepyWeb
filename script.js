@@ -1,6 +1,18 @@
-// Function to write log messages
+const logBox = document.getElementById('log-box');
+
+// แสดง log
+function showLog() {
+    if (logBox) logBox.style.display = 'block';
+}
+
+// ซ่อน log
+function hideLog() {
+    if (logBox) logBox.style.display = 'none';
+}
+
+// Function เพิ่มข้อความ log
 function logError(message) {
-    const logBox = document.getElementById('log-box');
+    if (!logBox) return;
     const time = new Date().toLocaleTimeString();
     const newLog = document.createElement('div');
     newLog.textContent = `[${time}] ${message}`;
@@ -8,14 +20,9 @@ function logError(message) {
     logBox.scrollTop = logBox.scrollHeight;
 }
 
-// Check if video loaded
+// ตรวจสอบ Video และ Audio
 const bgVideo = document.getElementById('bg-video');
-bgVideo.addEventListener('error', () => {
-    logError("Video del.mp4 ไม่โหลด");
-});
+bgVideo.addEventListener('error', () => logError("Video del.mp4 ไม่โหลด"));
 
-// Check if audio loaded
 const bgMusic = document.getElementById('bg-music');
-bgMusic.addEventListener('error', () => {
-    logError("Audio delmusic.mp4 ไม่เล่น");
-});
+bgMusic.addEventListener('error', () => logError("Audio delmusic.mp3 ไม่เล่น"));
