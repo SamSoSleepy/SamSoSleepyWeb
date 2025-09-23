@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     /* Fallback background if video doesn't load */
-    background: url('del.png') no-repeat center center fixed;
+    background: url('del.gif') no-repeat center center fixed;
     background-size: cover;
 }
 
