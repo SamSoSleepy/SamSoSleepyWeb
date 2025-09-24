@@ -9,11 +9,20 @@
 <body>
 
     <img src="del.gif" id="gifBackground">
+    
+    <!-- Background Music from YouTube -->
+    <div class="youtube-background">
+        <iframe id="musicPlayer"
+            src="https://www.youtube.com/embed/7f1RK1m7qvc?autoplay=1&mute=1&controls=0&loop=1&playlist=7f1RK1m7qvc&rel=0&showinfo=0"
+            allow="autoplay"
+            style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; opacity: 0;">
+        </iframe>
+    </div>
 
     <div class="top-bar">
         <a href="#" class="button" id="freeAddonBtn">Free Addon</a>
         <a href="#" class="button">BetMcUi</a>
-        <a href="#" class="button">Other</a>
+        <a href="#" class="button" id="musicBtn">🔇 เปิดเพลง</a>
     </div>
 
     <div id="main-content">
