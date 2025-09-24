@@ -49,6 +49,11 @@ body {
     transform: translateY(-2px);
 }
 
+#main-content {
+    text-align: center;
+    padding-top: 50px;
+}
+
 #box-container {
     padding: 20px;
     display: grid;
@@ -56,7 +61,7 @@ body {
     gap: 30px;
     justify-content: center;
     align-items: center;
-    padding-bottom: 50px; /* เพิ่มพื้นที่ด้านล่างเพื่อให้เลื่อนได้สะดวกขึ้น */
+    padding-bottom: 50px;
 }
 
 .box {
