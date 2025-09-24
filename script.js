@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Array of music playlists - easy to add more songs
     const musicPlaylist = [
         {
-            id: '0p5ZiillFdA',
+            id: '7f1RK1m7qvc',
             title: 'Current Song'
         }
         // เพิ่มเพลงใหม่ได้ที่นี่:
