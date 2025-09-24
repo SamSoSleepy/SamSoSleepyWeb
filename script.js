@@ -3,33 +3,35 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const boxContainer = document.getElementById('box-container');
     const mainContent = document.getElementById('main-content');
     const musicBtn = document.getElementById('musicBtn');
-    const youtubeIframe = document.getElementById('musicPlayer');
+    const audioPlayer = document.getElementById('musicPlayer');
     
-    // Array of music playlists - easy to add more songs
+    // Array of music files - easy to add more songs
     const musicPlaylist = [
         {
-            id: '7f1RK1m7qvc',
-            title: 'Current Song'
+            src: 'delmusic1.mp3',
+            title: 'Background Music 1'
         }
         // เพิ่มเพลงใหม่ได้ที่นี่:
         // {
-        //     id: 'NEW_VIDEO_ID',
-        //     title: 'Song Name'
+        //     src: 'song2.mp3',
+        //     title: 'Background Music 2'
         // }
     ];
 
     let currentSongIndex = 0;
-    let isMuted = true; // เริ่มต้นด้วยเสียงปิด
+    let isPlaying = false; // ตรวจสอบว่าเพลงเล่นอยู่หรือไม่
     let hasStartedMusic = false; // ตรวจสอบว่าเพลงเริ่มเล่นแล้วหรือยัง
 
     // Function to start music on first user interaction
     function startMusicOnFirstInteraction() {
         if (!hasStartedMusic) {
-            const currentSong = musicPlaylist[currentSongIndex];
-            youtubeIframe.src = `https://www.youtube.com/embed/${currentSong.id}?autoplay=1&mute=0&controls=0&loop=1&playlist=${currentSong.id}&rel=0&showinfo=0`;
-            musicBtn.textContent = '🔊 ปิดเพลง';
-            isMuted = false;
-            hasStartedMusic = true;
+            audioPlayer.play().then(() => {
+                musicBtn.textContent = '🔊 ปิดเพลง';
+                isPlaying = true;
+                hasStartedMusic = true;
+            }).catch(e => {
+                console.log('Auto-play prevented:', e);
+            });
             
             // ลบ event listeners หลังจากเริ่มเล่นแล้ว
             document.removeEventListener('click', startMusicOnFirstInteraction);
@@ -54,23 +56,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 
-    // Music control button functionality (รวมเป็น Other button)
+    // Music control button functionality
     musicBtn.addEventListener('click', (e) => {
         e.preventDefault();
         
-        if (isMuted) {
-            // เปิดเสียง
-            const currentSong = musicPlaylist[currentSongIndex];
-            youtubeIframe.src = `https://www.youtube.com/embed/${currentSong.id}?autoplay=1&mute=0&controls=0&loop=1&playlist=${currentSong.id}&rel=0&showinfo=0`;
-            musicBtn.textContent = '🔊 ปิดเพลง';
-            isMuted = false;
-            hasStartedMusic = true;
-        } else {
-            // ปิดเสียง
-            const currentSong = musicPlaylist[currentSongIndex];
-            youtubeIframe.src = `https://www.youtube.com/embed/${currentSong.id}?autoplay=1&mute=1&controls=0&loop=1&playlist=${currentSong.id}&rel=0&showinfo=0`;
+        if (isPlaying) {
+            // ปิดเพลง
+            audioPlayer.pause();
             musicBtn.textContent = '🔇 เปิดเพลง';
-            isMuted = true;
+            isPlaying = false;
+        } else {
+            // เปิดเพลง
+            audioPlayer.play().then(() => {
+                musicBtn.textContent = '🔊 ปิดเพลง';
+                isPlaying = true;
+                hasStartedMusic = true;
+            }).catch(e => {
+                console.log('Play prevented:', e);
+            });
         }
     });
 
@@ -83,9 +86,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
         
         const currentSong = musicPlaylist[currentSongIndex];
-        const muteParam = isMuted ? 1 : 0;
-        youtubeIframe.src = `https://www.youtube.com/embed/${currentSong.id}?autoplay=1&mute=${muteParam}&controls=0&loop=1&playlist=${currentSong.id}&rel=0&showinfo=0`;
+        audioPlayer.src = currentSong.src;
+        
+        if (isPlaying) {
+            audioPlayer.play();
+        }
     }
+
+    // Set volume to comfortable level
+    audioPlayer.volume = 0.5;
 
     // เพิ่มฟังก์ชัน changeSong ไว้ในระดับ global เผื่อต้องการใช้
     window.changeSong = changeSong;
