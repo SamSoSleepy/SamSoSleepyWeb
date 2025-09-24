@@ -22,14 +22,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
             // ลบ event listeners หลังจากเริ่มเล่นแล้ว
             document.removeEventListener('click', startMusicOnFirstInteraction);
             document.removeEventListener('touchstart', startMusicOnFirstInteraction);
+            document.removeEventListener('touchend', startMusicOnFirstInteraction);
             document.removeEventListener('keydown', startMusicOnFirstInteraction);
+            document.body.removeEventListener('touchstart', startMusicOnFirstInteraction);
+            document.body.removeEventListener('touchend', startMusicOnFirstInteraction);
         }
     }
 
     // เพิ่ม event listeners สำหรับการเริ่มเพลงในการสัมผัสครั้งแรก
     document.addEventListener('click', startMusicOnFirstInteraction);
     document.addEventListener('touchstart', startMusicOnFirstInteraction);
+    document.addEventListener('touchend', startMusicOnFirstInteraction);
     document.addEventListener('keydown', startMusicOnFirstInteraction);
+    
+    // เพิ่ม event listener สำหรับการสัมผัสที่หน้าจอโดยตรง
+    document.body.addEventListener('touchstart', startMusicOnFirstInteraction, { passive: true });
+    document.body.addEventListener('touchend', startMusicOnFirstInteraction, { passive: true });
 
     // Free Addon button functionality
     freeAddonBtn.addEventListener('click', (e) => {
